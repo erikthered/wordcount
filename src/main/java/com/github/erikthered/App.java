@@ -30,7 +30,7 @@ public class App {
             var commonWords = Files.readAllLines(commonWordsFile);
             var wordCount = Files.lines(textFile)
                     .flatMap(l -> Arrays.stream(l.toLowerCase().replaceAll("[,.!?;:()`'\"*-]", "").split("\\s")))
-                    .filter(w -> !commonWords.contains(w) && w.length() > 0)
+                    .filter(w -> !commonWords.contains(w) && !w.isEmpty())
                     .collect(Collectors.toMap(
                             word -> word,
                             word -> 1,
