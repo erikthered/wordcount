@@ -17,8 +17,16 @@ I setup the project with Gradle, so the easiest way to run is the following:
 
 ## Approach
 
+I used streams to break each line of the text file down into a stream of 
+Strings, and then accumulated the words into a Map<String, Integer> while
+incrementing the count on duplicates. I did try to normalize by shifting
+everything to lower case and stripping out punctuation/special characters.
+
 ## Areas for Potential Improvement
 
 Sanitizing the text was done pretty naively, I didn't think it was worth the 
 effort right now to do thing like balancing quotes and trying not to exclude
 contractions.
+
+The speed could potentially be improved by using parallel streams and 
+collecting to a ConcurrentHashMap.
