@@ -13,7 +13,17 @@ at path #2, excluding the words defined in the file at path #1.
 
 I setup the project with Gradle, so the easiest way to run is the following:
 
-`./gradlew run --args='"src/test/resources/common_words.txt" "src/test/resources/alice_in_wonderland.txt"'`
+```
+./gradlew run --args='"src/test/resources/common_words.txt" "src/test/resources/alice_in_wonderland.txt"'
+```
+
+Alternatively you can build a jar and run the program that way:
+
+```bash
+./gradlew assemble
+java -jar build/libs/words.jar "src/test/resources/common_words.txt" "src/test/resources/alice_in_wonderland.txt" 
+```
+
 
 ## Approach
 

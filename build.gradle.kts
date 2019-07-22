@@ -28,3 +28,11 @@ val test by tasks.getting(Test::class) {
     // Use junit platform for unit tests
     useJUnitPlatform()
 }
+
+val jar by tasks.getting(Jar::class) {
+    manifest {
+        attributes["Main-Class"] = application.mainClassName
+    }
+
+    from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
+}
