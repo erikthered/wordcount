@@ -21,7 +21,7 @@ dependencies {
 
 application {
     // Define the main class for the application
-    mainClassName = "com.github.erikthered.App"
+    mainClassName = "com.github.erikthered.wordcount.App"
 }
 
 val test by tasks.getting(Test::class) {
